@@ -59,7 +59,7 @@ public class MyArrayList2<E> implements IMyArrayList<E>{
 
         public MyArrayList2Iterator(MyArrayList2<E> myArrayList2){
             this.myArrayList2=myArrayList2;
-            this.currentNode=myArrayList2.nodeHead;
+            //this.currentNode=myArrayList2.nodeHead;
         }
 
         public boolean hasNext() {
