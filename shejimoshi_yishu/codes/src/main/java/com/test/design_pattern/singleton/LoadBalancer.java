@@ -67,6 +67,5 @@ public class LoadBalancer{
 
         System.out.println(loadBalancer.getRandom());
         System.out.println(loadBalancer.getRandom());
-
     }
 }
