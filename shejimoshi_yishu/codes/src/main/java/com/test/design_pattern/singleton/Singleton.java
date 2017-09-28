@@ -22,7 +22,8 @@ package com.test.design_pattern.singleton;
  * 懒汉式
  */
 public class Singleton {
-    private static Singleton instance;
+    //volatile关键字避免指令重排序
+    private volatile static Singleton instance;
 
     private Singleton(){}
 
@@ -43,7 +44,7 @@ public class Singleton {
  * 饿汉式
  */
 class Singleton2{
-    private static Singleton2 instance=new Singleton2();
+    private static final Singleton2 instance=new Singleton2();
     private Singleton2(){}
 
     public static Singleton2 getInstance(){

@@ -15,7 +15,7 @@ import java.util.Random;
  * 单例模式的实例：
  *      负载均衡器的实现
  */
-public class LoadBalancer {
+public class LoadBalancer{
     private static LoadBalancer instance=new LoadBalancer();
 
     /**
@@ -53,7 +53,20 @@ public class LoadBalancer {
         int size=this.serveList.size();
         if(0==this.serveList.size()) return null;
 
-        int index=new Random().nextInt()*size;
+        int index=new Random().nextInt(size);
         return this.serveList.get(index);
+    }
+
+    public static void main(String[] args) {
+        LoadBalancer loadBalancer=LoadBalancer.GetInstance();
+        loadBalancer.addServer("server1");
+        loadBalancer.addServer("server2");
+        loadBalancer.addServer("server3");
+        loadBalancer.addServer("server4");
+        loadBalancer.addServer("server5");
+
+        System.out.println(loadBalancer.getRandom());
+        System.out.println(loadBalancer.getRandom());
+
     }
 }
