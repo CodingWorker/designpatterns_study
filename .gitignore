@@ -1,5 +1,5 @@
-#for idea
+# for idea
 **/.idea/*
 
-#for maven
+# for maven
 target/
